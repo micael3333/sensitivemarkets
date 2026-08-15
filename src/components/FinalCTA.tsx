@@ -1,0 +1,1 @@
+import {Brand,BuyButton,Section} from './shared';export function FinalCTA(){return <Section className="final"><div><Brand/><h2>Pare de operar no escuro.</h2><p className="lead">Você não precisa saber tudo antes de começar. Mas precisa saber o que está fazendo quando começar.</p><BuyButton>QUERO COMEÇAR</BuyButton><small>iGaming Edition · Turma Fundadora</small></div></Section>}
