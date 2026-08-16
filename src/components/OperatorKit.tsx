@@ -1,0 +1,66 @@
+import {
+  Sheet,
+  Calculator,
+  FileCheck,
+  Waypoints,
+  Tags,
+  PanelsTopLeft,
+} from "lucide-react";
+import { Section, Eyebrow } from "./shared";
+const items = [
+  "Calculadora de campanhas",
+  "Planilha de unit economics",
+  "Checklist de contrato",
+  "Checklist de compliance",
+  "Estrutura de tracking",
+  "Modelo de UTMs e SubIDs",
+  "Matriz de criativos",
+  "Briefing de anúncio",
+  "Modelo de relatório",
+  "Checklist pré-campanha",
+];
+const icons = [
+  Calculator,
+  Sheet,
+  FileCheck,
+  FileCheck,
+  Waypoints,
+  Tags,
+  PanelsTopLeft,
+  FileCheck,
+  Sheet,
+  FileCheck,
+];
+export function OperatorKit() {
+  return (
+    <Section className="kit">
+      <Eyebrow>AFFILIATE OPERATOR KIT</Eyebrow>
+      <h2>Você não recebe apenas aulas.</h2>
+      <p className="lead">
+        Receba ferramentas para transformar conhecimento em operação.
+      </p>
+      <div className="kit-grid">
+        {items.map((x, i) => {
+          const Icon = icons[i];
+          return (
+            <article key={x}>
+              <div>
+                <span />
+                <span />
+                <span />
+              </div>
+              <Icon />
+              <small>RECURSO {String(i + 1).padStart(2, "0")}</small>
+              <b>{x}</b>
+            </article>
+          );
+        })}
+      </div>
+      <p className="center-callout">
+        Você não termina uma aula perguntando “e agora?”.
+        <br />
+        <b>A proposta é entregar uma estrutura para executar.</b>
+      </p>
+    </Section>
+  );
+}

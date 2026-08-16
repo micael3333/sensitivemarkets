@@ -1,0 +1,33 @@
+import { BuyButton, Eyebrow, Section } from "./shared";
+const steps = [
+  ["OFERTA", "Entender o que está sendo vendido e como você será remunerado."],
+  ["AQUISIÇÃO", "Saber onde, como e para quem anunciar."],
+  ["TRACKING", "Saber de onde suas conversões estão vindo."],
+  ["NÚMEROS", "Entender custo, aquisição, receita e resultado."],
+  ["OTIMIZAÇÃO", "Descobrir o que cortar, manter ou melhorar."],
+  ["ESCALA", "Aumentar investimento quando os dados justificarem."],
+];
+export function OperatingFlow() {
+  return (
+    <Section id="operacao" className="flow-section">
+      <Eyebrow>O MECANISMO</Eyebrow>
+      <h2>
+        Ser afiliado profissional não é simplesmente receber um link e divulgar.
+      </h2>
+      <p className="lead">Existe uma operação por trás.</p>
+      <div className="flow">
+        {steps.map((s, i) => (
+          <article key={s[0]}>
+            <span>0{i + 1}</span>
+            <b>{s[0]}</b>
+            <p>{s[1]}</p>
+          </article>
+        ))}
+      </div>
+      <div className="flow-end">
+        <h3>É essa operação que você vai aprender a construir.</h3>
+        <BuyButton>QUERO APRENDER A OPERAR</BuyButton>
+      </div>
+    </Section>
+  );
+}

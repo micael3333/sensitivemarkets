@@ -1,0 +1,70 @@
+import { ChevronDown } from "lucide-react";
+import { Section, Eyebrow } from "./shared";
+const modules = [
+  [
+    "Como funciona a indústria",
+    "Operadores, afiliados, media buyers, redes, managers e modelos de negócio.",
+  ],
+  [
+    "Compliance antes do tráfego",
+    "O ambiente regulatório, publicidade responsável e as regras que vêm antes da campanha.",
+  ],
+  [
+    "Oferta e contrato",
+    "CPA, Revenue Share, Hybrid, critérios de aquisição, tracking, relatórios e pagamento.",
+  ],
+  [
+    "Matemática da operação",
+    "Os números que mostram se sua campanha está funcionando ou apenas movimentando dinheiro.",
+  ],
+  [
+    "Aquisição e canais",
+    "Como pensar mídia, públicos, placements e distribuição.",
+  ],
+  [
+    "Criativos",
+    "Hooks, UGC, vídeos, estáticos, ângulos, comunicação e metodologia de teste.",
+  ],
+  [
+    "Landing pages e funis",
+    "Como transformar o clique em ação sem destruir conversão e confiança.",
+  ],
+  [
+    "Tracking e atribuição",
+    "Como estruturar uma visão própria da origem e performance da sua aquisição.",
+  ],
+  [
+    "Otimização",
+    "Como encontrar gargalos e decidir o que cortar, manter ou melhorar.",
+  ],
+  [
+    "Escala e operação profissional",
+    "Como ampliar uma campanha e organizar uma operação mais madura.",
+  ],
+];
+export function Curriculum() {
+  return (
+    <Section id="conteudo" className="curriculum">
+      <Eyebrow>CONTEÚDO DA FORMAÇÃO</Eyebrow>
+      <div className="section-head">
+        <h2>Do zero à operação.</h2>
+        <p className="lead">
+          Uma formação construída seguindo a ordem em que uma operação realmente
+          precisa ser entendida.
+        </p>
+      </div>
+      <div className="modules">
+        {modules.map((m, i) => (
+          <details key={m[0]} open={i === 0}>
+            <summary>
+              <span>{String(i + 1).padStart(2, "0")}</span>
+              <b>{m[0]}</b>
+              <ChevronDown />
+            </summary>
+            <p>{m[1]}</p>
+          </details>
+        ))}
+      </div>
+    </Section>
+  );
+}

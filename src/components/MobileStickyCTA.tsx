@@ -1,0 +1,20 @@
+import { useEffect, useState } from "react";
+import { BuyButton } from "./shared";
+export function MobileStickyCTA() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const fn = () => setShow(scrollY > 650);
+    addEventListener("scroll", fn, { passive: true });
+    fn();
+    return () => removeEventListener("scroll", fn);
+  }, []);
+  return (
+    <div className={`mobile-cta ${show ? "show" : ""}`}>
+      <span>
+        <small>TURMA FUNDADORA</small>
+        <b>R$ 697</b>
+      </span>
+      <BuyButton>ENTRAR</BuyButton>
+    </div>
+  );
+}

@@ -1,0 +1,49 @@
+import { Check } from "lucide-react";
+import { BuyButton, Eyebrow, Section } from "./shared";
+const list = [
+  "FORMAÇÃO COMPLETA",
+  "AFFILIATE OPERATOR KIT",
+  "ATUALIZAÇÕES DO CONTEÚDO",
+  "MATERIAIS OPERACIONAIS",
+  "POSSIBILIDADE DE QUALIFICAÇÃO PARA OPORTUNIDADES COMERCIAIS DA REDE",
+];
+export function Pricing() {
+  return (
+    <Section id="oferta" className="pricing">
+      <div className="pricing-card">
+        <div>
+          <Eyebrow>TURMA FUNDADORA</Eyebrow>
+          <h2>
+            Sensitive Marketing Academy
+            <br />
+            <em>iGaming Edition</em>
+          </h2>
+          <div className="price-mobile">
+            <small>INVESTIMENTO</small>
+            <strong>R$ 697</strong>
+          </div>
+          <ul>
+            {list.map((x) => (
+              <li key={x}>
+                <Check />
+                {x}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="price-box">
+          <small>INVESTIMENTO</small>
+          <strong>R$ 697</strong>
+          <span>Turma Fundadora</span>
+          <BuyButton />
+          <p>Pagamento processado por plataforma segura.</p>
+        </div>
+      </div>
+      <p className="disclaimer">
+        Não há garantia de resultados financeiros. Performance depende de
+        execução, investimento, mercado, oferta, condições comerciais e outras
+        variáveis.
+      </p>
+    </Section>
+  );
+}
